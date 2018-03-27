@@ -1,20 +1,32 @@
-let num = 1,
-		degree,
-		calc = 1;
+let	myShopName = prompt("Название Вашего магазина?"),
+		myBudget = +prompt("Ваш бюджет?"),
+		mainList = {
+			shopName : "",
+			budget: 0,
+			shopGoods: [],
+			employers: {
+				name1: "Иванов",
+				name2: "Петров",
+				name3: "Сидоров"
+			},
+			open: true
+		};
 
-num = +prompt("Введите число,над которым будем проводить операции:","");
-while (num > 0) {
-	if (num >= 10) {
-		calc = calc*(num%10);
-		num = (num-num%10)/10;
-	} else {
-		calc = calc*num;
-		num = 0;
-	};
-};
+//console.log(mainList);
 
-degree = Math.pow(calc,3);
+mainList.shopName = myShopName;
+mainList.budget = myBudget;
 
-alert("Произведение цифр Вашего числа равно: " + calc + 
-			"\nПроизведение, возведенное в 3ю степень равно: " + degree);
+//console.log(mainList);
+
+for (let i = 0; i < 3; i++) {
+	mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?");
+}
+
+console.log(mainList);
+
+alert("Уважаемый владелец магазина " + mainList.shopName + 
+	"!\nВы собираетесь продавать: " + mainList.shopGoods[0] + ", " 
+	+ mainList.shopGoods[1] + ", " + mainList.shopGoods[2] + 
+	".\nВаш бюджет на 1 день составит: " + mainList.budget/30 + " у.е.");
 
