@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="calc-block">
+		<div class="calc">
+		
+			<div class="tabs">
+				<div class="tab-left active">
+					Лэндинг
+				</div>
+				<!-- /.tab-left -->
+				<div class="tab-right">
+					Многостраничник
+				</div>
+				<!-- /.tab-right -->
+			</div>
+			<!-- /.tabs -->
+		
+			<div class="blocks" id="blocks-block">
+				<div class="blocks__title">Количество блоков</div>
+				<input type="number" class="counter" id="counter-block">
+				<!-- /.blocks__title -->
+			</div>
+			<!-- /.blocks -->
+			<div class="blocks" id="pages-block">
+				<div class="blocks__title">Количество страниц</div>
+				<input type="number" class="counter" id="counter-pages">
+			</div>
+			<!-- /.blocks -->
+			<div class="blocks">
+				<div class="blocks__title">Сколько часов на проект</div>
+				<input type="number" class="counter" id="counter-hours">
+			</div>
+			<!-- /.blocks -->
+			<div class="blocks">
+				<div class="blocks__title">Стоимость вашего часа</div>
+				<input type="number" class="counter" id="counter-rate">
+			</div>
+			<!-- /.blocks -->
+		
+		<div class="addiction">
+			<div class="addiction__title">
+				Дополнительно
+			</div>
+			<!-- /.addiction__title -->
+			<div class="addiction__block">
+				<label>
+		        <input type="checkbox" id="changes-check" class="addiction__checkbox">
+		        <span class="addiction__checkbox_custom"></span>
+		        <span class="addiction__checkbox__label">Возможность редактировать текст на сайте</span>
+		      </label>
+			</div>
+			<!-- /.addiction__block -->
+			<div class="addiction__block">
+				<label>
+					<input type="checkbox" id="cms-check" class="addiction__checkbox">
+					<span class="addiction__checkbox_custom"></span>
+		        <span class="addiction__checkbox__label">Установка на CMS</span>
+		      </label>		
+			</div>
+			<!-- /.addiction__block -->
+		</div>
+		<!-- /.addiction -->
+		
+		<div class="total">
+			Общая стоимость
+			<input value="21500" type="text" class="total-count" id="total-value">
+		</div>
+		
+		</div>
+		<!-- /.calc -->
+	</div>
+	<!-- /.calc-block -->
+
+<script src="js/script.js"> </script>
+</body>
+</html>

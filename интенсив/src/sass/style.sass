@@ -1,0 +1,182 @@
+$active: #efae02
+//=before
+@mixin before
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 1px
+		background-color: $active
+
+
+*
+	box-sizing: border-box
+	outline: none
+
+body
+	height: 100vh
+	background: #fff url(../img/bg.jpg) center no-repeat
+		size: cover
+	font-family: 'Open Sans', sans-serif
+	font-weight: 700
+
+.calc
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: flex-start
+	margin: 0 auto
+	width: 1072px
+	height: 650px
+	border: 2px solid $active
+	&-block
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 100%
+		width: 100%
+
+.tabs
+	display: flex
+	justify-content: center
+	width: 100%
+	padding-top: 24px
+	padding-bottom: 35px
+	.tab-left, .tab-right
+		width: 200px
+		height: 70px
+		margin-right: 2px
+		color: #cecece
+		font-size: 18px
+		line-height: 71px
+		letter-spacing: -0.18px
+		text-align: center
+		border-radius: 0 15px 0 0
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.77) 0%, #323131 100%)
+		cursor: pointer
+	.tab-left
+		border-radius: 15px 0 0 0
+	.active
+		position: relative
+		color: #000000
+		background:
+			color: $active
+			image: none
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -6px
+			width: 200px
+			height: 1px
+			background-color: $active
+
+.counter
+	width: 132px
+	height: 60px
+	font-size: 48px
+	font-weight: 700
+	letter-spacing: -0.48px
+	text-align: center
+	color: $active
+	background-color: transparent
+	border: 3px solid rgba($active, 0.6)
+
+
+.blocks
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 73.7%
+	margin-bottom: 26px
+	
+	&__title
+		position: relative
+		margin-left: 11px
+		margin-top: 16px
+		font-size: 30px
+		letter-spacing: -0.3px
+		color: #ffffff
+		@include before
+
+#pages-block
+	display: none
+
+.addiction
+	width: 73.7%
+	margin-top: -5px
+	font-size: 30px
+	letter-spacing: -0.3px
+	color: $active
+	&__title
+		margin-bottom: 6px
+		text-align: center
+	&__block
+		margin-left: 15px
+		margin-bottom: 18px
+		text-align: left
+	&__checkbox
+		display: none
+		&_custom
+			position: relative
+			width: 29px
+			height: 29px
+			border: 3px solid #ffffff
+		&_custom, &__label
+			display: inline-block
+			vertical-align: middle
+		&__label
+			margin-left: 15px
+.addiction__checkbox:checked + .addiction__checkbox_custom::before
+	content: ''
+	display: block
+	position: absolute
+	top: 3px
+	bottom: 3px
+	right: 3px
+	left: 3px
+	background: $active
+	border-radius: 2px
+
+.total
+	width: 60%
+	margin-top: 12px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	font-size: 36px
+	letter-spacing: -0.36px
+	color: #ffffff
+	&-count
+		width: 200px
+		height: 60px
+		font-size: 56px
+		line-height: 60px
+		font-weight: 700
+		text-align: right
+		text-decoration: underline
+		color: $active
+		background-color: transparent
+		border: none
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+
+
+
