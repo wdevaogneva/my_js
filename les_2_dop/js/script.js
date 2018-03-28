@@ -23,8 +23,8 @@ console.log(p);*/
 //console.log(2 && 1 && null && 0 && undefined);
 
 //Есть ли разница между выражениями? !!( a && b ) и (a && b)?
-/*let a = 1, b = 2;
-console.log( !!(a && b) );*/
+//let a = 1, b = 2;
+console.log( !!(a && b) );
 
 //Что выведет этот код: alert( null || 2 && 3 || 4 ); ?
 //alert( null || 2 && 3 || 4 );
@@ -41,4 +41,4 @@ console.log(a == b);*/
 //alert( "ёжик" > "яблоко" );
 
 //Чему равно 0 || "" || 2 || undefined || true || falsе ?
-console.log(0 || "" || 2 || undefined || true || falsе);
+//console.log(0 || "" || 2 || undefined || true || falsе);
