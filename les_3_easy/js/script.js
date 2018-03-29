@@ -42,7 +42,7 @@ getDiscount(price, mainList.discount);
 function getEmployers(arr){
 	for (let i = 1; i < 5; i++ ){
 		let name = prompt("Введите имя " + i + "го сотрудника: ");
-		arr[i] = name;
+		arr[i-1] = name;
 	}
 	console.log(arr);
 }

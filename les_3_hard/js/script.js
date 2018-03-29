@@ -35,8 +35,8 @@ let sum = 0;
 
 for(let i = 0; i < 6; i++) {
 	let number = +arr[i];
-	if (Number.isNaN(number) !== true) {
-		sum = sum + number**3;
+	if (!isNaN(number)) {
+		sum += number**3;
 	}
 }
 
