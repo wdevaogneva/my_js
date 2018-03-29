@@ -1,43 +1,47 @@
-// задание про дни недели:
+let str = "урок-3-был-слишком-легким",
+		arr = [20, 33, 1, "Человек", 2, 3];
 
-let week = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресение"];
+//строка начинается с большой буквы
 
-alert("сегодня " + week[2]);
+str = str[0].toUpperCase() + str.substr( 1, str.length-1 );
+//alert(str);
 
-//любопытно, почему не сработало?
-/*var newP = document.createElement('p');
-newP.style.fontWeight = "bold";
-newP.innerHTML = "123";*/
 
-for (let i = 0; i < 7; i++ ) {
-	if (i == 2) {
-		document.write("<font style='font-style:italic'>" + week[i] + "</font><br>");
-	} else if (i > 4) {
-		document.write("<font style='font-weight:bold'>" + week[i] + "</font><br>");
-	} else {
-		document.write(week[i] + "<br>");
-	}	
+//замените все “-” на пробелы
+
+//вариант без replace
+/*for(let i = 0; i < str.length; i++) {
+	if ( str[i] === "-") {
+		str = str.substr(0, i) + " " + str.substr(i+1, str.length-i);
+	};
+}
+alert(str);*/
+
+//вариант с replace
+
+str = str.replace(/-/g," ");
+console.log(str);
+
+//Из получившейся строки вырезать слово “легким”, заменить 2 последние буквы на “о”
+
+let substrPos = str.indexOf("легким");
+let str2 = str.substr( substrPos, 5 );
+str2 = str2.replace("и","о");
+document.write("<font style='font-size:72px'>" + str2 + "</font>");
+
+
+// Вывести в консоль квадратный корень из суммы кубов элементов массива
+let sum = 0;
+
+for(let i = 0; i < 6; i++) {
+	let number = +arr[i];
+	if (Number.isNaN(number) !== true) {
+		sum = sum + number**3;
+	}
 }
 
-// задание про массив чисел:
-let arr = [];
-for (let i = 0; i < 7; i++ ) {
-	let data = prompt(i+1 + ") Введите многозначное число: ");
-	arr[i] = data;
-};
-
-for (let i = 0; i < 7; i++ ) {
-	let firstNum = arr[i][0];
-
-	if (firstNum ==='3') {
-		console.log("Это число начинается с цифры 3: " + arr[i]);
-	} else if (firstNum === '7') {
-		console.log("Это число начинается с цифры 7: " + arr[i]);
-	  }
-	};
-
-
-
+let result = Math.sqrt(sum);
+console.log(result);
 
 
 

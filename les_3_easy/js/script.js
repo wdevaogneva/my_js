@@ -13,20 +13,41 @@ function start() {
 
 };
 
-//start();	
+start();
 
 let mainList = {
 			shopName : myShopName,
 			budget: myBudget,
 			shopGoods: [],
-			employers: {
-				name1: "Иванов",
-				name2: "Петров",
-				name3: "Сидоров"
-			},
+			employers: {},
 			open: false,
 			discount: false
 		};
+
+
+price = 1000;
+
+function getDiscount(price, discount) {
+	if (discount === true) {
+		price = price*0.8;
+		alert("ваша цена со скидкой = " + price + " у.е.");
+	} else {
+		alert("ваша цена без скидки = " + price + " у.е.");
+	}
+}
+
+getDiscount(price, mainList.discount);
+
+
+function getEmployers(arr){
+	for (let i = 1; i < 5; i++ ){
+		let name = prompt("Введите имя " + i + "го сотрудника: ");
+		arr[i] = name;
+	}
+	console.log(arr);
+}
+
+getEmployers(mainList.employers);
 
 function chooseGoods() {
 	for (let i = 0; i < 5; i++) {
@@ -52,7 +73,7 @@ function chooseGoods() {
 
 };
 
-//chooseGoods();
+chooseGoods();
 
 
 function workTime(time) {
