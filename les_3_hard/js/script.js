@@ -30,6 +30,7 @@ str2 = str2.replace("и","о");
 document.write("<font style='font-size:72px'>" + str2 + "</font>");
 
 
+
 // Вывести в консоль квадратный корень из суммы кубов элементов массива
 let sum = 0;
 

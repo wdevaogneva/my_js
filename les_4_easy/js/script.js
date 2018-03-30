@@ -108,13 +108,13 @@ console.log(mainList);
 mainList.chooseShopItems();
 
 document.write("У нас вы можете купить: <br>");
-mainList.shopItems.forEach(function (item, i, arr) {
+mainList.shopItems.forEach(function (item, i) {
 	document.write( i+1 + ") " + item + "<br>");
 })
 
 console.log("Наш магазин включает в себя: <br>");
 for (let key in mainList) {
-	console.log(key + ": " + mainList[key]);
+	console.log(key);
 }
 
 
