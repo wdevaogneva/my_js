@@ -1,4 +1,5 @@
-let arr = [];
+let arr = [],
+		sumAll = 0;
 
 
 function includeArrays () {
@@ -12,11 +13,12 @@ function includeArrays () {
 				sum += randomNumber;
 				randomArray.push(randomNumber);
 			}
+			sumAll +=sum;
 			console.log(randomArray);
-			alert("сумма чисел" + (i+1) + "го массива в составе массива arr = " + sum);
 			arr[i].push(randomArray);
 		}
 		console.log(arr);
+		alert("сумма чисел всего массива arr = " + sumAll);
 };
 
 includeArrays ();
