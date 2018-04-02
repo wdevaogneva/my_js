@@ -17,8 +17,8 @@ let name = document.getElementsByClassName("name")[0],
 		employersValue = document.getElementsByClassName("employers-value")[0],
 		discount = document.getElementsByClassName("discount")[0],
 		discountValue = document.getElementsByClassName("discount-value")[0],
-		isopen = document.getElementsByClassName("isopen")[0],
-		isopenValue = document.getElementsByClassName("isopen-value")[0];
+		isOpen = document.getElementsByClassName("isopen")[0],
+		isOpenValue = document.getElementsByClassName("isopen-value")[0];
 
 console.log("это все поля в левом меню: ");
 console.log(name);
@@ -33,8 +33,8 @@ console.log(employers);
 console.log(employersValue);
 console.log(discount);
 console.log(discountValue);
-console.log(isopen);
-console.log(isopenValue);
+console.log(isOpen);
+console.log(isOpenValue);
 
 //Получить поля категории товаров через класс
 let goodsItems = document.getElementsByClassName("goods-item");
@@ -43,12 +43,16 @@ console.log(goodsItems);
 
 
 //Получить все 3 кнопки через Tag
-let buttons = document.getElementsByTagName("button");
+let buttons = document.getElementsByTagName("button"),
+		goodsItemBtn = buttons[1],
+		countBudgetBtn = buttons[2],
+		hireEmployersBtn = buttons[3];
 
 console.log("это все 3 кнопки через Tag: ");
-console.log(buttons[1]);
-console.log(buttons[2]);
-console.log(buttons[3]);
+
+console.log(goodsItemBtn);
+console.log(countBudgetBtn);
+console.log(hireEmployersBtn);
 
 //Получить поля ввода товаров, времени и расчета бюджета через querySelector
 let chooseItem = document.querySelector(".choose-item"),
