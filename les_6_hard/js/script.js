@@ -24,14 +24,31 @@ let	myBudget,
 		price;
 
 // событие клика по кнопке "открыть магазин"
-mainBtn.addEventListener('click', () => {
+/*mainBtn.addEventListener('click', () => {
 	myBudget = prompt("Ваш бюджет?",'');
 	while (isNaN(myBudget) || myBudget == "" || myBudget == null) {
 		myBudget = prompt("Ваш бюджет?",'');
 	};
 	budgetValue.textContent = myBudget;
 	nameValue.textContent = prompt("Название Вашего магазина?",'').toUpperCase();
+});*/
+
+// событие клика по кнопке "открыть магазин" с анимацией
+mainBtn.addEventListener('click', () => {
+	//присваивание в переменную нужно только для того, чтобы потом можно было отменить таймер.
+	let timer = setTimeout(start, 2000);
+
 });
+
+function start (){
+	myBudget = prompt("Ваш бюджет?",'');
+	while (isNaN(myBudget) || myBudget == "" || myBudget == null) {
+		myBudget = prompt("Ваш бюджет?",'');
+	};
+	budgetValue.textContent = myBudget;
+	nameValue.textContent = prompt("Название Вашего магазина?",'').toUpperCase();
+};
+
 
 // событие клика по кнопке "утвердить"
 goodsItemBtn.addEventListener('click', () => {
