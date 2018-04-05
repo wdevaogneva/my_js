@@ -61,12 +61,6 @@ mainBtn.addEventListener('click', () => {
 	
 });
 
-// событие клика по кнопке "открыть магазин" с анимацией
-/*mainBtn.addEventListener('click', () => {
-	//присваивание в переменную нужно только для того, чтобы потом можно было отменить таймер.
-	let timer = setTimeout(start, 2000);
-
-});*/
 
 function start (){
 	myBudget = prompt("Ваш бюджет?",'');
@@ -84,7 +78,7 @@ goodsItemBtn.addEventListener('click', () => {
 		let a = goodsItem[i].value;
 		if ((typeof(a)) === 'string' && (typeof(a)) !== null && a.length < 50) {
 			console.log("Все верно!");
-			mainList.shopGoods[i] = a;
+			mainList.shopGoods[i] = " " + a;
 			goodsValue.textContent = mainList.shopGoods;
 			labelGoods.style.display = 'block';
 			goodsValue.style.display = 'block';
@@ -108,7 +102,7 @@ goodsItemBtn.addEventListener('click', () => {
 chooseItem.addEventListener('change', () => {
 	let items = chooseItem.value;
 	if (isNaN(items) && items !=='') {
-		mainList.shopItems = items.split(",");
+		mainList.shopItems = items.split(", ");
 		itemsValue.textContent = mySortNames(mainList.shopItems);
 		labelItems.style.display = 'block';
 		itemsValue.style.display = 'block';
@@ -202,7 +196,7 @@ function mySortNames(list) {
 	});
 
 	let result = map.map(function(e) {
-		newArr.push(list[e.index]);
+		newArr.push(" " + list[e.index]);
 		return newArr;
 	});
 	return newArr;
