@@ -61,13 +61,6 @@ mainBtn.addEventListener('click', () => {
 	
 });
 
-// событие клика по кнопке "открыть магазин" с анимацией
-/*mainBtn.addEventListener('click', () => {
-	//присваивание в переменную нужно только для того, чтобы потом можно было отменить таймер.
-	let timer = setTimeout(start, 2000);
-
-});*/
-
 function start (){
 	myBudget = prompt("Ваш бюджет?",'');
 	while (isNaN(myBudget) || myBudget == "" || myBudget == null) {
