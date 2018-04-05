@@ -226,6 +226,8 @@ function	reset(){
 	labelDiscount.style.display = 'none';
 	discountValue.style.display = 'none';
 	discountValue.value = '';
+	discountValue.style.color = '#000';
+	discountValue.textContent = "нет";
 	labelEmployers.style.display = 'none';
 	employersValue.style.display = 'none';
 	employersValue.value = '';
