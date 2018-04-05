@@ -235,6 +235,8 @@ function	reset(){
 	labelIsOpen.style.display = 'none';
 	isOpenValue.style.display = 'none';
 	isOpenValue.value = '';
+	isOpenValue.style.color = '#000';
+	isOpenValue.textContent = 'закрыт';
 	labelName.style.display = 'none';
 	nameValue.style.display = 'none';
 	nameValue.value = '';
