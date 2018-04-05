@@ -219,6 +219,8 @@ yesCheck.addEventListener('change', () => {
 				discountValue.style.color = 'green';
 				discountValue.textContent = "20 %";
 });
+// функция сброса:
+
 function	reset(){
 	labelGoods.style.display = 'none';
 	goodsValue.style.display = 'none';
@@ -262,6 +264,8 @@ function	reset(){
 // событие клика по кнопке "хочу работать ночью!"
 dayNightBtn.addEventListener('click', () => {
 	reset();
+	noCheck.checked = true;
+	yesCheck.checked = false;
 	let target = event.target;
 	if (target.classList.contains('night')) {
 		target.classList.remove('night');
