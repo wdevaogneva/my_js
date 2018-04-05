@@ -1,11 +1,106 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<title>less4_hard</title>
-</head>
-<body>
-	
-<script src="js/script.js"> </script>
-</body>
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My shop</title>
+	<link rel="icon" href="img/day-and-night_ico.png">
+  </head>
+  
+  <body>
+
+  <div class="daytime">
+		<button class="daytime-btn" id="daytime-btn">хочу работать ночью!</button>
+	</div>
+
+
+	<div class="open open_night">
+		<button class="open-btn" id="open-btn">Открыть магазин</button>
+	</div>
+
+
+	<div class="main">
+
+		<div class="main-info">
+			<div class="main-name">Карточка магазина: </div>
+			<div class="main-name-wrap">
+				<div class="name">Название: </div>
+				<div class="name-value"></div>
+			</div>
+
+			<div class="budget">Бюджет: </div>
+			<div class="budget-value"></div>
+
+			<div class="goods">Категории товаров: </div>
+			<div class="goods-value"></div>
+
+			<div class="items">Наименования товаров: </div>
+			<div class="items-value"></div>
+
+			<div class="employers">Сотрудники: </div>
+			<div class="employers-value"></div>
+
+			<div class="discount">Скидки: </div>
+			<div class="discount-value">нет</div>
+
+			<div class="isopen">Сейчас магазин: </div>
+			<div class="isopen-value">закрыт</div>
+		</div>
+
+
+
+		<div class="main-functions">
+			<div class="choose-goods">Введите категории товаров :</div>
+			<div class="flex-wrap">
+				<input class="goods-item" type="text" id="goods_1" placeholder="1.">
+				<input class="goods-item" type="text" id="goods_2" placeholder="2.">
+				<input class="goods-item" type="text" id="goods_3" placeholder="3.">
+				<input class="goods-item" type="text" id="goods_4" placeholder="4.">
+				<button class="goods-item-btn">утвердить</button>
+			</div>
+
+			<div class="choose-items">Введите продукты через запятую :</div>
+			<input class="choose-item" type="text" id="items">
+
+			<div class="flex-wrap">
+				<div class="time">Сколько сейчас времени?</div>
+				<input class="time-value" type="text" id="time" placeholder="полных часов">
+			</div>
+
+			<div class="flex-wrap">
+				<div class="count-budget">Расчет дневного бюджета</div>
+				<input class="count-budget-value" type="text" id="budget">
+				<button class="count-budget-btn">рассчитать</button>
+			</div>
+
+			<div class="flex-wrap">
+				<div class="hire-employers">Имена сотрудников</div>
+				<input class="hire-employers-item" type="text" id="employers_1" placeholder="1.">
+				<input class="hire-employers-item" type="text" id="employers_2" placeholder="2.">
+				<input class="hire-employers-item" type="text" id="employers_3" placeholder="3.">
+				<button class="hire-employers-btn">нанять</button>
+			</div>
+
+			<div class="flex-wrap">
+				<div class="loyal-customer__text">Есть ли сегодня скидка?</div>
+				<div class="loyal-customer__checkbox">
+					<div class="check-wrap">
+						<input type="radio" class="radio" id="yes" name="loyal-customer">
+						<label for="yes">да</label>
+					</div>
+					<input type="radio" class="radio" id="no" name="loyal-customer" checked>
+					<label for="no">нет</label>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<script  src="js/script.js">	</script>
+  </body>
 </html>

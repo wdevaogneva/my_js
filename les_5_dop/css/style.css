@@ -1,0 +1,626 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("../fonts/Roboto-Regular.eot?#iefix");
+  src: url("../fonts/Roboto-Regular.woff2");
+  src: url("../fonts/Roboto-Regular.woff");
+  src: url("../fonts/Roboto-Regular.ttf");
+  weight: normal;
+  style: normal;
+}
+
+@font-face {
+  font-family: 'Maclenburg Gotisch';
+  src: url("../fonts/MaclenburgGotisch.eot");
+  src: url("../fonts/MaclenburgGotisch.eot?#iefix");
+  src: url("../fonts/MaclenburgGotisch.woff2");
+  src: url("../fonts/MaclenburgGotisch.woff");
+  src: url("../fonts/MaclenburgGotisch.ttf");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Slavianskiy';
+  src: url("../fonts/Slavianskiy-Regular.eot");
+  src: url("../fonts/Slavianskiy-Regular.eot?#iefix");
+  src: url("../fonts/Slavianskiy-Regular.woff2");
+  src: url("../fonts/Slavianskiy-Regular.woff");
+  src: url("../fonts/Slavianskiy-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karnac One';
+  src: url("../fonts/KarnacOne.eot");
+  src: url("../fonts/KarnacOne.eot?#iefix");
+  src: url("../fonts/KarnacOne.woff2");
+  src: url("../fonts/KarnacOne.woff");
+  src: url("../fonts/KarnacOne.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Menuet script';
+  src: url("../fonts/Menuetscript.eot");
+  src: url("../fonts/Menuetscript.eot?#iefix");
+  src: url("../fonts/Menuetscript.woff2");
+  src: url("../fonts/Menuetscript.woff");
+  src: url("../fonts/Menuetscript.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'v_CCZoinks';
+  src: url("../fonts/v_CCZoinks.eot");
+  src: url("../fonts/v_CCZoinks.eot?#iefix");
+  src: url("../fonts/v_CCZoinks.woff2");
+  src: url("../fonts/v_CCZoinks.woff");
+  src: url("../fonts/v_CCZoinks.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:invalid {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  height: 670px;
+  background: url("../img/day/bg.jpg") center no-repeat;
+  background-size: cover;
+  background-color: #FAF3EB;
+}
+
+.daytime {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: url("../img/day/right-label.png") center no-repeat;
+  background-size: 100%;
+}
+
+.daytime_night {
+  background: url("../img/night/right-label.png") center no-repeat;
+  background-size: 100%;
+}
+
+.daytime_night .daytime-btn {
+  color: #000;
+}
+
+.daytime-btn {
+  font-family: "v_CCZoinks", sans-serif;
+  margin: 60px 3px 0 10px;
+  color: #640000;
+  background-color: transparent;
+  border: none;
+  opacity: 0.8;
+  -webkit-transition: All 0.4s;
+  transition: All 0.4s;
+}
+
+.daytime-btn:hover {
+  font-size: 14px;
+  color: #A70000;
+  -webkit-transition: All 0.4s;
+  transition: All 0.4s;
+}
+
+.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 800px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 5px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url("../img/day/label.png") center no-repeat;
+  background-size: 70% 100%;
+}
+
+.open_night {
+  background: url("../img/night/label.png") center no-repeat;
+  background-size: 70% 100%;
+}
+
+.open_night .open-btn {
+  font-family: "Maclenburg Gotisch", sans-serif;
+  margin-top: 0;
+  color: #000;
+  font-size: 40px;
+}
+
+.open_night .open-btn:hover {
+  font-size: 42px;
+}
+
+.open-btn {
+  font-family: "Karnac One", sans-serif;
+  width: 330px;
+  height: 70px;
+  margin-top: -10px;
+  border: none;
+  outline: none;
+  color: #640000;
+  font-size: 32px;
+  background-color: transparent;
+  border-radius: 8px;
+  -webkit-transition: All 0.4s;
+  transition: All 0.4s;
+}
+
+.open-btn:hover {
+  font-size: 34px;
+  color: #A70000;
+  -webkit-transition: All 0.4s;
+  transition: All 0.4s;
+}
+
+.main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.main-name {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Karnac One", sans-serif;
+  color: #640000;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.main-name-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.main-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  width: 450px;
+  min-height: 300px;
+  padding: 50px 80px;
+  background: url("../img/day/shop-card.png") center 0 no-repeat;
+  background-size: 100% 105%;
+}
+
+.main-info_night {
+  background: url("../img/night/shop-card.png") center 0 no-repeat;
+  background-size: 100% 105%;
+}
+
+.main-info_night .main-name {
+  font-family: "Maclenburg Gotisch", sans-serif;
+  font-size: 44px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.main-info_night .name,
+.main-info_night .budget,
+.main-info_night .goods,
+.main-info_night .items,
+.main-info_night .employers,
+.main-info_night .discount,
+.main-info_night .isopen,
+.main-info_night .name-value,
+.main-info_night .budget-value,
+.main-info_night .goods-value,
+.main-info_night .items-value,
+.main-info_night .employers-value,
+.main-info_night .discount-value,
+.main-info_night .isopen-value {
+  font-family: "Slavianskiy", sans-serif;
+  font-size: 18px;
+}
+
+.main-functions {
+  width: 600px;
+  min-height: 300px;
+  padding: 45px 50px 75px 50px;
+  background: url("../img/day/task-list.png") center no-repeat;
+  background-size: 100% 100%;
+}
+
+.main-functions_night {
+  background: url("../img/night/task-list.png") center no-repeat;
+  background-size: 100% 100%;
+}
+
+.main-functions_night .choose-goods,
+.main-functions_night .choose-items,
+.main-functions_night .time,
+.main-functions_night .count-budget,
+.main-functions_night .hire-employers,
+.main-functions_night .loyal-customer__text {
+  font-family: "Maclenburg Gotisch", sans-serif;
+  font-size: 24px;
+}
+
+.main-functions_night .goods-item,
+.main-functions_night .choose-item,
+.main-functions_night .time-value,
+.main-functions_night .count-budget-value,
+.main-functions_night .hire-employers-item {
+  font-family: "Slavianskiy", sans-serif;
+  font-size: 18px;
+}
+
+.main-functions_night .goods-item-btn,
+.main-functions_night .count-budget-btn,
+.main-functions_night .hire-employers-btn {
+  font-family: "Slavianskiy", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.main-functions_night .goods-item,
+.main-functions_night .choose-item,
+.main-functions_night .time-value,
+.main-functions_night .count-budget-value,
+.main-functions_night .hire-employers-item {
+  border-bottom: 1px solid #000;
+}
+
+.main-functions_night .goods-item::-webkit-input-placeholder,
+.main-functions_night .choose-item::-webkit-input-placeholder,
+.main-functions_night .time-value::-webkit-input-placeholder,
+.main-functions_night .count-budget-value::-webkit-input-placeholder,
+.main-functions_night .hire-employers-item::-webkit-input-placeholder {
+  color: #303030;
+}
+
+.main-functions_night .goods-item::-moz-placeholder,
+.main-functions_night .choose-item::-moz-placeholder,
+.main-functions_night .time-value::-moz-placeholder,
+.main-functions_night .count-budget-value::-moz-placeholder,
+.main-functions_night .hire-employers-item::-moz-placeholder {
+  color: #303030;
+}
+
+.main-functions_night .goods-item:-moz-placeholder,
+.main-functions_night .choose-item:-moz-placeholder,
+.main-functions_night .time-value:-moz-placeholder,
+.main-functions_night .count-budget-value:-moz-placeholder,
+.main-functions_night .hire-employers-item:-moz-placeholder {
+  color: #303030;
+}
+
+.main-functions_night .goods-item:-ms-input-placeholder,
+.main-functions_night .choose-item:-ms-input-placeholder,
+.main-functions_night .time-value:-ms-input-placeholder,
+.main-functions_night .count-budget-value:-ms-input-placeholder,
+.main-functions_night .hire-employers-item:-ms-input-placeholder {
+  color: #303030;
+}
+
+.name,
+.budget,
+.goods,
+.items,
+.employers,
+.discount,
+.isopen {
+  display: none;
+  min-height: 30px;
+  padding: 0 5px;
+  font-family: "Menuet script", sans-serif;
+  font-weight: 700;
+  color: #640000;
+  font-size: 20px;
+}
+
+.name-value,
+.budget-value,
+.goods-value,
+.items-value,
+.employers-value,
+.discount-value,
+.isopen-value {
+  display: none;
+  font-family: "Menuet script", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  min-height: 30px;
+  padding: 0 5px;
+}
+
+.goods,
+.items,
+.employers {
+  text-align: center;
+  width: 100%;
+}
+
+.goods-value,
+.items-value,
+.employers-value {
+  text-align: center;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.isopen,
+.budget,
+.discount {
+  text-align: right;
+  width: 50%;
+}
+
+.isopen-value,
+.budget-value,
+.discount-value {
+  padding-left: 20px;
+  width: 50%;
+}
+
+.name {
+  text-align: right;
+}
+
+.choose-goods,
+.choose-items,
+.time,
+.count-budget,
+.hire-employers,
+.loyal-customer__text {
+  margin-top: 5px;
+  text-align: center;
+  font-family: "Karnac One", sans-serif;
+  color: #640000;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.goods-item,
+.choose-item,
+.time-value,
+.count-budget-value,
+.hire-employers-item {
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  padding-top: 5px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px dotted #640000;
+}
+
+.goods-item-btn,
+.count-budget-btn,
+.hire-employers-btn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  margin: 10px auto;
+  padding-bottom: 10px;
+  font-family: "Karnac One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 1px solid #640000;
+  border-radius: 15px;
+  background: url("../img/day/btn-bg.png") center no-repeat;
+  background-size: cover;
+  -webkit-transition: All 0.4s;
+  transition: All 0.4s;
+}
+
+.goods-item-btn:hover,
+.count-budget-btn:hover,
+.hire-employers-btn:hover {
+  font-weight: 700;
+  color: #A70000;
+  -webkit-transition: All 0.4s;
+  transition: All 0.4s;
+}
+
+.goods-item-btn_night,
+.count-budget-btn_night,
+.hire-employers-btn_night {
+  background: url("../img/night/btn-bg.png") center no-repeat;
+  background-size: cover;
+}
+
+.goods-item {
+  padding-left: 10px;
+  width: 45%;
+  height: 25px;
+}
+
+.goods-item-btn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.flex-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 0 40px;
+}
+
+.choose-item,
+.time-value,
+.count-budget-value {
+  display: block;
+  margin: 0 auto;
+  padding-left: 10px;
+  width: 70%;
+  height: 25px;
+}
+
+.time {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.time-value {
+  margin-top: 10px;
+  width: 30%;
+}
+
+.count-budget {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.count-budget-value {
+  width: 30%;
+  margin-top: 10px;
+}
+
+.hire-employers {
+  display: block;
+  margin: 0 auto;
+  padding-left: 10px;
+  width: 45%;
+  height: 25px;
+}
+
+.hire-employers-item {
+  display: block;
+  margin: 0 auto;
+  padding-left: 10px;
+  width: 45%;
+  height: 25px;
+}
+
+.hire-employers-btn {
+  display: block;
+  margin-top: 10px;
+}
+
+.loyal-customer__text {
+  padding-left: 15px;
+}
+
+.loyal-customer__checkbox {
+  display: block;
+  text-align: center;
+  margin-top: 3px;
+  vertical-align: middle;
+}
+
+.loyal-customer__checkbox label {
+  font-family: "Karnac One", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.check-wrap {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.radio + label {
+  position: relative;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+}
+
+.radio + label:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #640000;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.radio + label:after {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #640000;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.radio:checked + label:after {
+  opacity: 1;
+}
