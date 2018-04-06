@@ -218,6 +218,9 @@ yesCheck.addEventListener('change', () => {
 				discountValue.style.color = 'green';
 				discountValue.textContent = "20 %";
 });
+
+// функция сброса:
+
 function	reset(){
 	labelGoods.style.display = 'none';
 	goodsValue.style.display = 'none';
@@ -225,6 +228,8 @@ function	reset(){
 	labelDiscount.style.display = 'none';
 	discountValue.style.display = 'none';
 	discountValue.value = '';
+	discountValue.style.color = '#000';
+	discountValue.textContent = "нет";
 	labelEmployers.style.display = 'none';
 	employersValue.style.display = 'none';
 	employersValue.value = '';
@@ -234,6 +239,8 @@ function	reset(){
 	labelIsOpen.style.display = 'none';
 	isOpenValue.style.display = 'none';
 	isOpenValue.value = '';
+	isOpenValue.style.color = '#000';
+	isOpenValue.textContent = 'закрыт';
 	labelName.style.display = 'none';
 	nameValue.style.display = 'none';
 	nameValue.value = '';
@@ -257,6 +264,8 @@ function	reset(){
 // событие клика по кнопке "хочу работать ночью!"
 dayNightBtn.addEventListener('click', () => {
 	reset();
+	noCheck.checked = true;
+	yesCheck.checked = false;
 	let target = event.target;
 	if (target.classList.contains('night')) {
 		target.classList.remove('night');
@@ -270,9 +279,6 @@ dayNightBtn.addEventListener('click', () => {
 		goodsItemBtn.classList.remove("goods-item-btn_night");
 		countBudgetBtn.classList.remove("count-budget-btn_night");
 		hireEmployersBtn.classList.remove("hire-employers-btn_night");
-		
-
-
 
 	} else {
 		reset();

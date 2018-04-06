@@ -271,6 +271,12 @@ body {
   font-size: 18px;
 }
 
+.main-info_night .goods,
+.main-info_night .items,
+.main-info_night .employers {
+  margin-top: 10px;
+}
+
 .main-functions {
   width: 600px;
   min-height: 300px;
