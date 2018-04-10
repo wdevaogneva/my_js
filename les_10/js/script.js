@@ -162,7 +162,6 @@ window.addEventListener('DOMContentLoaded', function(){
 	//модальное окно
 
 	let more = document.querySelector('.more'),
-			descrBtn = document.querySelectorAll('.description-btn'),
 			overlay = document.querySelector('.overlay'),
 			close = document.querySelector('.popup-close');
 
@@ -181,18 +180,19 @@ window.addEventListener('DOMContentLoaded', function(){
 	});
   
   
-	//вызов модального окна из табов
-	for (let i = 0; i < descrBtn.length; i++) {
-		descrBtn[i].addEventListener('click', function () {
-		overlay.style.display = 'block';
-		document.body.style.overflow = "hidden";
-
+	//вызов модального окна из табов с помощью делегирования событий
+		let infoWrap = document.querySelector('.info');
+			infoWrap.addEventListener('click', function (event) {
+			if (event.target && event.target.matches('div.description-btn')){
+				overlay.style.display = 'block';
+				document.body.style.overflow = "hidden";
+			}
 		});
-	}
+
 
 	// задание урока 10:
 
-	class options {
+/*	class options {
 		constructor(height, width, bg, fontSize, textAlign) {
 			this.height = height;
 			this.width = width;
@@ -210,7 +210,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
 	let myDiv = new options (200, 600, 'yellow', '36px', 'center');
 
-	myDiv.createNewDiv ();
+	myDiv.createNewDiv ();*/
 
 
 });
