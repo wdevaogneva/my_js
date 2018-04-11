@@ -61,10 +61,7 @@ mainBtn.addEventListener('click', () => {
 	
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6c19aaeaa07b5cd49a5e749adeb86416fb2cd9f2
 function start (){
 	myBudget = prompt("Ваш бюджет?",'');
 	while (isNaN(myBudget) || myBudget == "" || myBudget == null) {
@@ -81,11 +78,11 @@ goodsItemBtn.addEventListener('click', () => {
 		let a = goodsItem[i].value;
 		if ((typeof(a)) === 'string' && (typeof(a)) !== null && a.length < 50) {
 			console.log("Все верно!");
-<<<<<<< HEAD
+
 			mainList.shopGoods[i] =  " " + a;
-=======
+
 			mainList.shopGoods[i] = " " + a;
->>>>>>> 6c19aaeaa07b5cd49a5e749adeb86416fb2cd9f2
+
 			goodsValue.textContent = mainList.shopGoods;
 			labelGoods.style.display = 'block';
 			goodsValue.style.display = 'block';
@@ -226,10 +223,8 @@ yesCheck.addEventListener('change', () => {
 				discountValue.style.color = 'green';
 				discountValue.textContent = "20 %";
 });
-<<<<<<< HEAD
 
-=======
->>>>>>> 6c19aaeaa07b5cd49a5e749adeb86416fb2cd9f2
+
 // функция сброса:
 
 function	reset(){
