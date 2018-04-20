@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			alert('Пожалуйста, заполните ФИО Вашего кандидата'); 
 		} else {
 			for (let i = 0; i < name.length; i++) {
-				if ((/^[А-ЯЁ]*$/i.test(name[i])) || (name[i] === ' ')) { 
+				if ((/^[А-ЯЁ]*$/i.test(name[i])) || (name[i] === ' ')||(name[i] === '-')) { 
 						res = res*1;
 						if (name[i] === ' '){
 							space++;
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function(){
 		}
 
 		if ((res === 0) || !isNaN(name)) { 
-				console.log("это не то");
+				//console.log("это не то");
 				alert("Используйте только русские буквы!");
 				candidateName.value = '';
 				return false;
@@ -92,7 +92,7 @@ window.addEventListener('DOMContentLoaded', function(){
 				if (name.length > newName.length) {
 					space -= name.length-newName.length;
 				}
-				//
+				//проверяем на пробелы( в ФИО должно быть минимум 3 слова)
 				if (space < 2) {
 					console.log("подозрительно мало пробелов");
 					alert("Проверьте, всё ли Вы указали?");
@@ -401,7 +401,6 @@ window.addEventListener('DOMContentLoaded', function(){
 
   		//небольшая анимация смены отображаемых страниц
   		let election = document.createElement('div');
-  		election.classList.add("election-overlay");
   		election.style.cssText = 'position: fixed; display: block; top: 0; left: 0;'+
   		'width: 100%; height: 100%; z-index: 3;  opacity: 0;'+
   		'background: rgb(31,140,226) url(../img/election.png) center center no-repeat';
@@ -420,9 +419,7 @@ window.addEventListener('DOMContentLoaded', function(){
 		  				election.style.opacity -= step;
 		  				i++;
 		  			}	else if (i == 32) {
-		  				//на всякий пожарный возвращаем настройки "как было" и скрываем=)
-		  				election.style.opacity = 0;
-		  				election.style.display = 'none';
+		  				document.body.removeChild(election);
 		  				clearInterval(repeat);
 		  			} else {
 		  				console.log('что-то пошло не так');
@@ -431,16 +428,12 @@ window.addEventListener('DOMContentLoaded', function(){
   			repeat = setInterval(electionAnimate, 100);
 
 			//создаем новую карточку с нашим кандидатом
-			let newCard = document.createElement('div');
+			let newCard = card.cloneNode(true);
 
-			newCard.classList.add("main-cards-item");
 			newCard.classList.add("my-card");
 
-			newCard.innerHTML = '<div class="candidate-block"><div class="photo"></div>'+
-			'<div class="result"><div class="result-count"></div>'+
-			'<div class="progress"><div class="progress-bar progress-bar-3"></div></div></div></div>'+
-			'<div class="name"></div><div class="age"></div>	Пол:<div class="sex"></div>'+
-			'Полит. взгляды:<div class="views"></div>Биография	<div class="bio"></div>';
+			newCard.querySelector('.progress-bar').classList.remove('progress-bar-2');
+			newCard.querySelector('.progress-bar').classList.add('progress-bar-3');
 			//заполняем нашу карточку
 			newCard.querySelector('.name').textContent = myCandidate.name;
 
@@ -457,6 +450,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			newCard.querySelector('.bio').textContent = myCandidate.bio;
 
 			//добавляем внешний вид
+			newCard.querySelector('.photo').classList.remove('photo-2');
 			newCard.querySelector('.photo').classList.add('photo-3');
 			newCard.querySelector('.photo').innerHTML ='<div class="photo-hair">'+
 			'</div><div class="photo-clothes"></div><div class="photo-shoes"></div>';
@@ -485,6 +479,95 @@ window.addEventListener('DOMContentLoaded', function(){
 			reset();
 		}
   });
+
+
+	//КНОПКА "СБРОСИТЬ РЕЗУЛЬТАТЫ"
+  let resetBtn = document.getElementById('reset');
+  		
+
+  resetBtn.addEventListener('click', () => {
+  	
+  	//приводим свойства объекта с кандидатом в первоначальный вид
+  	myCandidate.name = '';
+  	myCandidate.age = '';
+  	myCandidate.bio = '';
+  	myCandidate.sex = 'Мужской';
+  	myCandidate.views = 'Либеральные';
+  	myCandidate.skinNumber = 1;
+  	myCandidate.hairNumber = 1;
+  	myCandidate.clothesNumber = 1;
+
+  	//сбрасываем информацию в слайдере
+		personSkin.style.backgroundImage = 'url("../img/skin/skin-1.png")';
+		personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-1.png")';
+		personHair.style.backgroundImage = 'url("../img/hair/construct/hair-1.png")';
+		personShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes.png)';
+		
+		
+		for (let i = 0; i<3; i++) {
+			hairWoman[i].style.display = 'none';
+			clothesWoman[i].style.display = 'none';
+			skin[i].style.display = 'none';
+			hairMan[i].style.display = 'none';
+			clothesMan[i].style.display = 'none';
+		}
+
+		clothes = clothesMan;
+		hair = hairMan;
+
+		skin[0].style.display = 'block';
+		hairMan[0].style.display = 'block';
+		clothesMan[0].style.display = 'block';
+
+		//сбрасываем информацию в анкете
+		candidateName.value = '';
+		candidateAge.value = '';
+		candidateBio.value = '';
+		if (candidateSex[1].checked) {
+			candidateSex[1].checked = false;
+			candidateSex[0].checked = true;
+		};
+		candidateSelect.value = "Либеральные";
+
+  	//анимация смены отображаемых страниц, а также удаления карточки с кандидатом
+		let over = document.createElement('div');
+		over.style.cssText = 'position: fixed; display: block; top: 0; left: 0;'+
+		'width: 100%; height: 100%; z-index: 3; opacity: 0.05; background-color: rgb(31,140,226)';
+
+		document.body.appendChild(over);
+
+		let step = 0.05,
+				i = 1,
+				overAnimate = function() {
+	  			if (i <= 20){
+	  				let t = i*step;
+	  				over.style.opacity = t;
+	  				i++;
+	  			} else if (i === 21) {
+	  				over.style.opacity = 1;
+	  				//скрываем main-блок и показываем custom-блок
+	  				main.style.display = 'none';
+						custom.style.display = 'flex';
+						//получаем и удаляем карточку с кандидатом
+				  	let myCard = document.querySelector('.my-card');
+				  	myCard.parentNode.removeChild(myCard);
+	  				i++;
+	  			}	else if ((i > 21) && (i < 24)) {
+	  				i++;
+	  			}	else if ((i >= 24) && (i < 46)) {
+	  				over.style.opacity -= step;
+	  				i++;
+	  			} else if (i == 46) {
+	  				document.body.removeChild(over);
+	  				clearInterval(repeat);
+	  			} else {
+	  				console.log('что-то пошло не так');
+	  			}
+	  		},
+			repeat = setInterval(overAnimate, 25);
+
+	});
+
 
 
 });
