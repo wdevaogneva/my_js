@@ -134,8 +134,8 @@ window.addEventListener('DOMContentLoaded', function(){
 			};
 
 	//разделение одежды и прически на мужскую/женскую
-	for (let i = 0; i < 6; i++) {
-		if (i<3) {
+	for (let i = 0; i < 8; i++) {
+		if (i<4) {
 			allHair[i].classList.add('man');
 			allClothes[i].classList.add('man');
 		} else {
@@ -183,7 +183,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			
 			hairMan[0].style.display = 'block';
 			clothesMan[0].style.display = 'block';
-			for (let i = 0; i<3; i++) {
+			for (let i = 0; i < 4; i++) {
 				hairWoman[i].style.display = 'none';
 				clothesWoman[i].style.display = 'none';
 				skin[i].style.display = 'none';
@@ -199,14 +199,14 @@ window.addEventListener('DOMContentLoaded', function(){
  			myCandidate.sex = 'Мужской';
  			
  		} else {
- 			personSkin.style.backgroundImage = 'url("../img/skin/skin-4.png")';
- 			personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-4.png")';
-			personHair.style.backgroundImage = 'url("../img/hair/construct/hair-4.png")';
+ 			personSkin.style.backgroundImage = 'url("../img/skin/skin-5.png")';
+ 			personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-5.png")';
+			personHair.style.backgroundImage = 'url("../img/hair/construct/hair-5.png")';
 			personShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes-2.png)';
 			
 			hairWoman[0].style.display = 'block';
 			clothesWoman[0].style.display = 'block';
-			for (let i = 0; i<3; i++) {
+			for (let i = 0; i < 4; i++) {
 				hairMan[i].style.display = 'none';
 				clothesMan[i].style.display = 'none';
 				skin[i].style.display = 'none';
@@ -216,9 +216,9 @@ window.addEventListener('DOMContentLoaded', function(){
  			hair = hairWoman;
  			skin[0].style.display = 'block';
 
-			myCandidate.skinNumber = 4;
-			myCandidate.hairNumber = 4;
-			myCandidate.clothesNumber = 4;
+			myCandidate.skinNumber = 5;
+			myCandidate.hairNumber = 5;
+			myCandidate.clothesNumber = 5;
  			myCandidate.sex = 'Женский';
 
  		}	
@@ -271,7 +271,7 @@ window.addEventListener('DOMContentLoaded', function(){
   	if (myCandidate.sex === 'Мужской') {
   		showIndex = slideIndex;
   	} else {
-  		showIndex = slideIndex+3;
+  		showIndex = slideIndex+4;
   	}
   	myCandidate.skinNumber = showIndex;
   	personSkin.style.backgroundImage = 'url("../img/skin/skin-'+ showIndex +'.png")';
@@ -311,7 +311,7 @@ window.addEventListener('DOMContentLoaded', function(){
   	if (myCandidate.sex === 'Мужской') {
   		showIndex = slideIndex;
   	} else {
-  		showIndex = slideIndex+3;
+  		showIndex = slideIndex+4;
   	}
   	myCandidate.hairNumber = showIndex;
   	personHair.style.backgroundImage = 'url("../img/hair/construct/hair-'+ showIndex +'.png")';
@@ -353,7 +353,7 @@ window.addEventListener('DOMContentLoaded', function(){
   	if (myCandidate.sex === 'Мужской') {
   		showIndex = slideIndex;
   	} else {
-  		showIndex = slideIndex+3;
+  		showIndex = slideIndex+4;
   	}
   	myCandidate.clothesNumber = showIndex;
   	personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-'+ showIndex +'.png")';
@@ -504,7 +504,7 @@ window.addEventListener('DOMContentLoaded', function(){
 		personShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes.png)';
 		
 		
-		for (let i = 0; i<3; i++) {
+		for (let i = 0; i<4; i++) {
 			hairWoman[i].style.display = 'none';
 			clothesWoman[i].style.display = 'none';
 			skin[i].style.display = 'none';
