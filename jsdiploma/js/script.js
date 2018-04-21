@@ -176,10 +176,10 @@ window.addEventListener('DOMContentLoaded', function(){
   //выбор пола
  	sexRadio.addEventListener('change', function() {
  		if (candidateSex[0].checked) {
- 			personSkin.style.backgroundImage = 'url("../img/skin/skin-1.png")';
- 			personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-1.png")';
-			personHair.style.backgroundImage = 'url("../img/hair/construct/hair-1.png")';
-			personShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes.png)';
+ 			personSkin.style.backgroundImage = 'url("./img/skin/skin-1.png")';
+ 			personClothes.style.backgroundImage = 'url("./img/clothes/construct/clothes-1.png")';
+			personHair.style.backgroundImage = 'url("./img/hair/construct/hair-1.png")';
+			personShoes.style.backgroundImage = 'url(./img/clothes/construct/shoes.png)';
 			
 			hairMan[0].style.display = 'block';
 			clothesMan[0].style.display = 'block';
@@ -199,10 +199,10 @@ window.addEventListener('DOMContentLoaded', function(){
  			myCandidate.sex = 'Мужской';
  			
  		} else {
- 			personSkin.style.backgroundImage = 'url("../img/skin/skin-5.png")';
- 			personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-5.png")';
-			personHair.style.backgroundImage = 'url("../img/hair/construct/hair-5.png")';
-			personShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes-2.png)';
+ 			personSkin.style.backgroundImage = 'url("./img/skin/skin-5.png")';
+ 			personClothes.style.backgroundImage = 'url("./img/clothes/construct/clothes-5.png")';
+			personHair.style.backgroundImage = 'url("./img/hair/construct/hair-5.png")';
+			personShoes.style.backgroundImage = 'url(./img/clothes/construct/shoes-2.png)';
 			
 			hairWoman[0].style.display = 'block';
 			clothesWoman[0].style.display = 'block';
@@ -274,7 +274,7 @@ window.addEventListener('DOMContentLoaded', function(){
   		showIndex = slideIndex+4;
   	}
   	myCandidate.skinNumber = showIndex;
-  	personSkin.style.backgroundImage = 'url("../img/skin/skin-'+ showIndex +'.png")';
+  	personSkin.style.backgroundImage = 'url("./img/skin/skin-'+ showIndex +'.png")';
   }
  	//добавление/удаление слайда
   function plusSlidersSkin(nom) {
@@ -314,7 +314,7 @@ window.addEventListener('DOMContentLoaded', function(){
   		showIndex = slideIndex+4;
   	}
   	myCandidate.hairNumber = showIndex;
-  	personHair.style.backgroundImage = 'url("../img/hair/construct/hair-'+ showIndex +'.png")';
+  	personHair.style.backgroundImage = 'url("./img/hair/construct/hair-'+ showIndex +'.png")';
   }
 
   //добавление/удаление слайда
@@ -356,7 +356,7 @@ window.addEventListener('DOMContentLoaded', function(){
   		showIndex = slideIndex+4;
   	}
   	myCandidate.clothesNumber = showIndex;
-  	personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-'+ showIndex +'.png")';
+  	personClothes.style.backgroundImage = 'url("./img/clothes/construct/clothes-'+ showIndex +'.png")';
   }
   
   //добавление/удаление слайда
@@ -403,7 +403,7 @@ window.addEventListener('DOMContentLoaded', function(){
   		let election = document.createElement('div');
   		election.style.cssText = 'position: fixed; display: block; top: 0; left: 0;'+
   		'width: 100%; height: 100%; z-index: 3;  opacity: 0;'+
-  		'background: rgb(31,140,226) url(../img/election.png) center center no-repeat';
+  		'background: rgb(31,140,226) url(./img/election.png) center center no-repeat';
 
   		document.body.appendChild(election);
 
@@ -455,23 +455,23 @@ window.addEventListener('DOMContentLoaded', function(){
 			newCard.querySelector('.photo').innerHTML ='<div class="photo-hair">'+
 			'</div><div class="photo-clothes"></div><div class="photo-shoes"></div>';
 
-			newCard.querySelector('.photo-3').style.cssText = 'position: relative; background: url(../img/skin/skin-'+ 
+			newCard.querySelector('.photo-3').style.cssText = 'position: relative; background: url(./img/skin/skin-'+ 
 			myCandidate.skinNumber 	+ '.png) center no-repeat;	background-size: cover';
 
 			newCard.querySelector('.photo-hair').style.cssText = 'position: absolute;	top: 0;	left: 0; width: 100%;'+
-			'height: 100%; background: url(../img/hair/construct/hair-'+ myCandidate.hairNumber + 
+			'height: 100%; background: url(./img/hair/construct/hair-'+ myCandidate.hairNumber + 
 			'.png) center no-repeat; background-size: cover';
 
 			newCard.querySelector('.photo-clothes').style.cssText = 'position: absolute;	top: 0;	left: 0; width: 100%;'+
-			'height: 100%; background: url(../img/clothes/construct/clothes-'+ myCandidate.clothesNumber + 
+			'height: 100%; background: url(./img/clothes/construct/clothes-'+ myCandidate.clothesNumber + 
 			'.png) center no-repeat; background-size: cover';
 
 			if (myCandidate.sex === 'Мужской') {
 	  		newCard.querySelector('.photo-shoes').style.cssText ='position: absolute;	top: 0;	left: 0; width: 100%;'+
-			'height: 100%; background: url(../img/clothes/construct/shoes.png) center no-repeat; background-size: cover';
+			'height: 100%; background: url(./img/clothes/construct/shoes.png) center no-repeat; background-size: cover';
 	  	} else {
 	  		newCard.querySelector('.photo-shoes').style.cssText ='position: absolute;	top: 0;	left: 0; width: 100%;'+
-			'height: 100%; background: url(../img/clothes/construct/shoes-2.png) center no-repeat; background-size: cover';
+			'height: 100%; background: url(./img/clothes/construct/shoes-2.png) center no-repeat; background-size: cover';
 	  	}
 
 	 	  	//помещаем ее посредине, обнуляем результаты
@@ -498,10 +498,10 @@ window.addEventListener('DOMContentLoaded', function(){
   	myCandidate.clothesNumber = 1;
 
   	//сбрасываем информацию в слайдере
-		personSkin.style.backgroundImage = 'url("../img/skin/skin-1.png")';
-		personClothes.style.backgroundImage = 'url("../img/clothes/construct/clothes-1.png")';
-		personHair.style.backgroundImage = 'url("../img/hair/construct/hair-1.png")';
-		personShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes.png)';
+		personSkin.style.backgroundImage = 'url("./img/skin/skin-1.png")';
+		personClothes.style.backgroundImage = 'url("./img/clothes/construct/clothes-1.png")';
+		personHair.style.backgroundImage = 'url("./img/hair/construct/hair-1.png")';
+		personShoes.style.backgroundImage = 'url(./img/clothes/construct/shoes.png)';
 		
 		
 		for (let i = 0; i<4; i++) {
