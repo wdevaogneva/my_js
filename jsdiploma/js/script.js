@@ -526,7 +526,7 @@ window.addEventListener('DOMContentLoaded', function(){
 		if (candidateSex[1].checked) {
 			candidateSex[1].checked = false;
 			candidateSex[0].checked = true;
-		};
+		}
 		candidateSelect.value = "Либеральные";
 
   	//анимация смены отображаемых страниц, а также удаления карточки с кандидатом
@@ -568,6 +568,78 @@ window.addEventListener('DOMContentLoaded', function(){
 
 	});
 
+	//ПРОВЕСТИ ЧЕСТНОЕ ГОЛОСОВАНИЕ ИЛИ ВМЕШАТЬСЯ В ВЫБОРЫ?
 
+	let votingBtn = document.getElementById('voting'),
+			crimeBtn = document.getElementById('crime'),
+
+			//функция поиска случайного целого числа от 0 до 100 
+			//с учетом механики округления round
+			randomPercent = function () {
+      let rand = Math.random() * 101 - 0.5;
+      rand = Math.round(rand);
+      return rand;
+      };
+
+  //функция подбора случайных чисел так, чтобы сумма была = 100
+  //параметр res - изменяемый массив с результатами на выходе
+  //параметр chit - кол-во процентов, добавляемых нашему кандидату
+  function randomVoices(res, chit) {
+		let	res1 = randomPercent(),
+				res2 = randomPercent(),
+				res3 = randomPercent();
+
+		if (res1+res2+res3 === 100-chit) {
+				res[0] = res1;
+				res[1] = res2 + chit;
+				res[2] = res3;
+				return;
+		} else {
+			randomVoices(res, chit);
+		}
+	}
+
+	//функция отображения результатов на экране (шкала и проценты)
+	function showResults(res) {
+		let percent = document.getElementsByClassName('result-count'),
+				scale = document.getElementsByClassName('progress-bar'),
+				cards = document.getElementsByClassName('main-cards-item'),
+				win = res[0],
+				winNomber = 0;
+
+		//ищем победителя
+		for ( let i = 0; i < percent.length; i++) {
+			if (res[i] > win) {
+				win = res[i];
+				winNomber = i;
+			}
+		}
+		 //отображаем результаты и выделяем победителя
+		for ( let i = 0; i < percent.length; i++) {
+			percent[i].textContent = res[i] + '%';
+			scale[i].style.height = res[i] + '%';
+			//на всякий пожарный очищаем предыдущих победителей
+			cards[i].classList.remove('main-cards-item-active');
+			//и выделяем текущего
+			if (i === winNomber) {
+				cards[i].classList.add('main-cards-item-active');
+			}
+		}		
+	}
+
+
+  //нажатие на кнопку "провести честное голосование"
+  votingBtn.addEventListener('click', () => {
+  	let result = [];
+  	randomVoices(result, 0);
+  	showResults(result);
+  });
+
+   //нажатие на кнопку "вмешаться в выборы"
+  crimeBtn.addEventListener('click', () => {
+  	let chitResult = [];
+  	randomVoices(chitResult, 25);
+  	showResults(chitResult);
+  });
 
 });
