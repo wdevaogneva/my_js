@@ -237,7 +237,9 @@ window.addEventListener('DOMContentLoaded', function(){
   	} else if (!isNaN(candidateBio.value.trim())) {
   		alert('Здесь должен быть текст, а не только числа'); 
   		candidateBio.value= '';
-  	} 
+  	} else if (candidateBio.value.trim().length < 40) {
+  		alert('Опишите биографию более подробно, пожалуйста!');
+  	}
   	myCandidate.bio = candidateBio.value.trim();
   });
 
@@ -397,6 +399,8 @@ window.addEventListener('DOMContentLoaded', function(){
   	//проверяем, все ли заполненно
   	if((myCandidate.name === '')||(myCandidate.age === '')||(myCandidate.bio === '')) {
   		alert('Пожалуйста, заполните все данные о кандидате');
+  	} else if (candidateBio.value.trim().length < 40){
+  		alert('Пожалуйста, опишите биографию более подробно');
   	} else {
 
   		//небольшая анимация смены отображаемых страниц

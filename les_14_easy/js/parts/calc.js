@@ -14,6 +14,7 @@ function calc() {
 	persons.setAttribute('type', 'text'); //немного костылей и шаманства, дабы не было странных странностей)))
 	restDays.setAttribute('type', 'text');
 
+
 	//состоит ли введенное только из цифр от 0 до 9?
 	function isItNumber(number) {
 		let t = 1;
